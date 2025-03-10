@@ -1,6 +1,6 @@
 let oscarsData = null; // Initialize to null to avoid undefined errors
 
-fetch('oscar.json')  // Updated to match your file name
+fetch('oscar.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -87,7 +87,9 @@ function showTopWinners() {
     oscarsData.forEach(item => {
         const winner = item[category];
         if (winner && winner !== 'NA') {
-            winners[winner] = (winners[winner] || 0) + 1;
+            // Extract the name by removing text in parentheses
+            const name = winner.replace(/\s*\([^)]+\)/, '').trim(); // Removes "(Movie Name)" and extra spaces
+            winners[name] = (winners[name] || 0) + 1;
         }
     });
 
