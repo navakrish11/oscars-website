@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Awards</title>
+    <title>Oscar Awards Database</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Oscar Awards Database</h1>
-    <div>
-        <label for="yearRange">Select Year Range:</label>
-        <input type="number" id="startYear" min="1929" max="2025" placeholder="Start Year">
-        <input type="number" id="endYear" min="1929" max="2025" placeholder="End Year">
-        <button onclick="displayResults()">Show Results</button>
+    <div class="container">
+        <div class="input-section">
+            <label for="yearRange">Select Year Range:</label>
+            <input type="number" id="startYear" min="1929" max="2025" placeholder="Start Year">
+            <input type="number" id="endYear" min="1929" max="2025" placeholder="End Year">
+            <button onclick="displayResults()">Show Results</button>
+        </div>
+        <div class="input-section">
+            <label for="category">Select Category:</label>
+            <select id="category" onchange="showTopWinners()">
+                <option value="">-- Select Category --</option>
+                <option value="Best Actor in a Leading Role">Best Actor in a Leading Role</option>
+                <option value="Best Actor in a Supporting Role">Best Actor in a Supporting Role</option>
+                <option value="Best Actress in a Leading Role">Best Actress in a Leading Role</option>
+                <option value="Best Actress in a Supporting Role">Best Actress in a Supporting Role</option>
+                <option value="Best Adapted Screenplay">Best Adapted Screenplay</option>
+                <option value="Best Art Direction">Best Art Direction</option>
+                <option value="Best Cinematography">Best Cinematography</option>
+                <option value="Best Costume Design">Best Costume Design</option>
+                <option value="Best Director">Best Director</option>
+                <option value="Best Film Editing">Best Film Editing</option>
+                <option value="Best Makeup">Best Makeup</option>
+                <option value="Best Original Score">Best Original Score</option>
+                <option value="Best Original Screenplay">Best Original Screenplay</option>
+                <option value="Best Original Song">Best Original Song</option>
+                <option value="Best Sound Editing">Best Sound Editing</option>
+                <option value="Best Sound Mixing">Best Sound Mixing</option>
+            </select>
+        </div>
+        <div id="results"></div>
     </div>
-    <div>
-        <label for="category">Select Category:</label>
-        <select id="category" onchange="showTopWinners()">
-            <option value="">-- Select Category --</option>
-            <option value="Best Actor in a Leading Role">Best Actor in a Leading Role</option>
-            <option value="Best Actor in a Supporting Role">Best Actor in a Supporting Role</option>
-            <option value="Best Actress in a Leading Role">Best Actress in a Leading Role</option>
-            <option value="Best Actress in a Supporting Role">Best Actress in a Supporting Role</option>
-            <option value="Best Adapted Screenplay">Best Adapted Screenplay</option>
-            <option value="Best Art Direction">Best Art Direction</option>
-            <option value="Best Cinematography">Best Cinematography</option>
-            <option value="Best Costume Design">Best Costume Design</option>
-            <option value="Best Director">Best Director</option>
-            <option value="Best Film Editing">Best Film Editing</option>
-            <option value="Best Makeup">Best Makeup</option>
-            <option value="Best Original Score">Best Original Score</option>
-            <option value="Best Original Screenplay">Best Original Screenplay</option>
-            <option value="Best Original Song">Best Original Song</option>
-            <option value="Best Sound Editing">Best Sound Editing</option>
-            <option value="Best Sound Mixing">Best Sound Mixing</option>
-        </select>
-    </div>
-    <div id="results"></div>
     <script src="script.js"></script>
 </body>
 </html>
