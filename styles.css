@@ -9,26 +9,26 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center content horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin: 20px 0; /* Margin to ensure it stays at the top */
+    margin: 20px 0;
     font-size: 2.5em;
 }
 
 .container {
-    background-color: #00cc00; /* Radiant green background */
+    background-color: #1A3C34; /* Dark green inspired by your image */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80%;
     max-width: 800px;
-    color: #fff; /* White font for all text inside container */
+    color: #fff; /* White font */
 }
 
 .input-section {
@@ -45,8 +45,8 @@ input[type="number"] {
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #fff; /* White background for input fields */
-    color: #000; /* Black text for input fields for readability */
+    background-color: #fff;
+    color: #000;
 }
 
 button {
@@ -54,28 +54,28 @@ button {
     background-color: #fff; /* White background for button */
     border: 1px solid #ccc;
     border-radius: 4px;
-    color: #00cc00; /* Radiant green text for button */
+    color: #1A3C34; /* Dark green text to match container */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #e6e6e6; /* Light gray on hover */
+    background-color: #e6e6e6;
 }
 
 select {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #fff; /* White background for dropdown */
-    color: #000; /* Black text for dropdown for readability */
+    background-color: #fff;
+    color: #000;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    text-align: left; /* Left align table content */
+    text-align: left;
 }
 
 th, td {
@@ -84,14 +84,14 @@ th, td {
 }
 
 th {
-    background-color: #00b300; /* Slightly darker green for table headers */
+    background-color: #0F2C28; /* Slightly lighter dark green for headers */
     color: #fff;
 }
 
 tr:nth-child(even) {
-    background-color: #00e600; /* Lighter green for even rows */
+    background-color: #1F4A42; /* Lighter green for even rows */
 }
 
 tr:nth-child(odd) {
-    background-color: #00cc00; /* Match container background for odd rows */
+    background-color: #1A3C34; /* Match container background for odd rows */
 }
