@@ -2,32 +2,33 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('oscar.jpg'); /* Use your oscar.jpg as background */
+    background-image: url('oscar.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 h1 {
     text-align: center;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
+    margin: 20px 0; /* Margin to ensure it stays at the top */
     font-size: 2.5em;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    background-color: #00cc00; /* Radiant green background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80%;
     max-width: 800px;
+    color: #fff; /* White font for all text inside container */
 }
 
 .input-section {
@@ -37,7 +38,6 @@ h1 {
 .input-section label {
     margin-right: 10px;
     font-weight: bold;
-    color: #333;
 }
 
 input[type="number"] {
@@ -45,44 +45,53 @@ input[type="number"] {
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #fff; /* White background for input fields */
+    color: #000; /* Black text for input fields for readability */
 }
 
 button {
     padding: 5px 15px;
-    background-color: #gold;
-    border: none;
+    background-color: #fff; /* White background for button */
+    border: 1px solid #ccc;
     border-radius: 4px;
-    color: #fff;
+    color: #00cc00; /* Radiant green text for button */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #e6b800;
+    background-color: #e6e6e6; /* Light gray on hover */
 }
 
 select {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #fff; /* White background for dropdown */
+    color: #000; /* Black text for dropdown for readability */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    text-align: left; /* Left align table content */
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #00b300; /* Slightly darker green for table headers */
+    color: #fff;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #00e600; /* Lighter green for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #00cc00; /* Match container background for odd rows */
 }
