@@ -1,4 +1,4 @@
-let oscarsData = null; // Initialize to null to avoid undefined errors
+let oscarsData = null;
 
 fetch('oscar.json')
     .then(response => {
@@ -49,12 +49,15 @@ function displayResults() {
 
     if (filteredData.length === 1) {
         const yearData = filteredData[0];
-        resultsDiv.innerHTML = `
-            <h2>${yearData.Year}</h2>
-            <p>Best Actor in a Leading Role: ${yearData["Best Actor in a Leading Role"] || 'NA'}</p>
-            <p>Best Actor in a Supporting Role: ${yearData["Best Actor in a Supporting Role"] || 'NA'}</p>
-            <p>Best Actress in a Leading Role: ${yearData["Best Actress in a Leading Role"] || 'NA'}</p>
-        `;
+        let html = `<h2>${yearData.Year}</h2><table><tr><th>Category</th><th>Winner</th></tr>`;
+        for (let category in yearData) {
+            const winner = yearData[category];
+            if (winner !== 'NA' && category !== 'Year') {
+                html += `<tr><td>${category}</td><td>${winner}</td></tr>`;
+            }
+        }
+        html += '</table>';
+        resultsDiv.innerHTML = html;
     } else {
         let table = '<table><tr><th>Year</th>';
         const headers = Object.keys(filteredData[0] || {}).filter(key => key !== 'Year');
@@ -87,15 +90,23 @@ function showTopWinners() {
     oscarsData.forEach(item => {
         const winner = item[category];
         if (winner && winner !== 'NA') {
-            // Extract the name by removing text in parentheses
-            const name = winner.replace(/\s*\([^)]+\)/, '').trim(); // Removes "(Movie Name)" and extra spaces
+            const name = winner.replace(/\s*\([^)]+\)/, '').trim();
             winners[name] = (winners[name] || 0) + 1;
         }
     });
 
     const sortedWinners = Object.entries(winners)
-        .sort((a, b) => b[1] - a[1])
-        .map(([name, count]) => `${name}: ${count} time${count > 1 ? 's' : ''}`);
+        .sort((a, b) => b[1] - a[1]);
 
-    resultsDiv.innerHTML = `<h2>Top ${category} Winners</h2><ul>${sortedWinners.map(w => `<li>${w}</li>`).join('')}</ul>`;
+    if (sortedWinners.length === 0) {
+        resultsDiv.innerHTML = '<p>No winners found for this category.</p>';
+        return;
+    }
+
+    let table = '<table><tr><th>Winner</th><th>Number of Awards</th></tr>';
+    sortedWinners.forEach(([name, count]) => {
+        table += `<tr><td>${name}</td><td>${count} time${count > 1 ? 's' : ''}</td></tr>`;
+    });
+    table += '</table>';
+    resultsDiv.innerHTML = `<h2>Top ${category} Winners</h2>${table}`;
 }
