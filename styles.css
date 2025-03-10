@@ -10,8 +10,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align to the left instead of center */
-    padding-left: 20px; /* Small padding to avoid touching the edge */
+    align-items: flex-start;
+    padding-left: 20px;
 }
 
 h1 {
@@ -20,16 +20,19 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin: 20px 0;
     font-size: 2.5em;
-    width: 100%; /* Ensure title spans the full width for centering */
+    width: 100%;
+    background-color: #2C3E50; /* Dark blue background */
+    padding: 10px 0; /* Add padding for better appearance */
+    border-radius: 5px; /* Optional: rounded corners for a polished look */
 }
 
 .container {
-    background-color: #1A3C34; /* Dark green */
+    background-color: #1A3C34;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Full width to extend to the left */
-    max-width: none; /* Remove max-width constraint */
+    width: 100%;
+    max-width: none;
     color: #fff;
 }
 
