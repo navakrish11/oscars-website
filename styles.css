@@ -10,7 +10,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align to the left instead of center */
+    padding-left: 20px; /* Small padding to avoid touching the edge */
 }
 
 h1 {
@@ -19,16 +20,17 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin: 20px 0;
     font-size: 2.5em;
+    width: 100%; /* Ensure title spans the full width for centering */
 }
 
 .container {
-    background-color: #1A3C34; /* Dark green inspired by your image */
+    background-color: #1A3C34; /* Dark green */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    max-width: 800px;
-    color: #fff; /* White font */
+    width: 100%; /* Full width to extend to the left */
+    max-width: none; /* Remove max-width constraint */
+    color: #fff;
 }
 
 .input-section {
@@ -51,10 +53,10 @@ input[type="number"] {
 
 button {
     padding: 5px 15px;
-    background-color: #fff; /* White background for button */
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
-    color: #1A3C34; /* Dark green text to match container */
+    color: #1A3C34;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -84,14 +86,14 @@ th, td {
 }
 
 th {
-    background-color: #0F2C28; /* Slightly lighter dark green for headers */
+    background-color: #0F2C28;
     color: #fff;
 }
 
 tr:nth-child(even) {
-    background-color: #1F4A42; /* Lighter green for even rows */
+    background-color: #1F4A42;
 }
 
 tr:nth-child(odd) {
-    background-color: #1A3C34; /* Match container background for odd rows */
+    background-color: #1A3C34;
 }
